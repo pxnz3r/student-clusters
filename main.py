@@ -37,6 +37,7 @@ from pxlab.cluster.analysis import (
     relabel_by,
     scale,
 )
+from pxlab.cluster.validate import run_validation
 from pxlab.common import MODELS_FOLDER, save_figure, save_table, set_plot_style, write_results_doc
 from student_clusters.data import ATTENDANCE, INPUTS, RESULT, RESULTS, SHOWN, STUDY, load_students
 from student_clusters.groups import advice_for, name_groups
@@ -143,6 +144,8 @@ def main():
         f"{FOLDER}/profiles_kmeans.png",
     )
     print("  K-Means: " + ", ".join(kmeans_names.values()))
+    print("Validation:")
+    run_validation(features, kmeans, kmeans_names, k, K_VALUES, FOLDER)
 
     # Comparison
     comparison = pd.crosstab(

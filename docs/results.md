@@ -39,6 +39,45 @@ Produced by `python main.py` on 1,655 students. K-Means with 20 random starts, s
 
 ![profiles kmeans](../outputs/figures/students/profiles_kmeans.png)
 
+## Validation
+
+### What the checks found
+
+| Finding |
+| --- |
+| Best k by each score: silhouette 2, Calinski-Harabasz 2, Davies-Bouldin 2; k = 4 was used. |
+| Most stable group: Highly engaged (mean Jaccard 0.98, very stable); least stable: Dropping off (0.95, very stable). |
+| Silhouette 0.452 on the real data against 0.345 on shuffled data with no relationships between inputs: the groups reflect real structure. |
+
+![silhouette diagram](../outputs/figures/students/silhouette_diagram.png)
+
+### Bootstrap stability of each group (50 draws)
+
+| Group | Mean Jaccard | Recovered in | Verdict |
+| --- | --- | --- | --- |
+| Absent | 0.973 | 1.0 | very stable |
+| Dropping off | 0.953 | 1.0 | very stable |
+| Steady | 0.96 | 1.0 | very stable |
+| Highly engaged | 0.976 | 1.0 | very stable |
+
+### Real data against shuffled data
+
+| Real silhouette | Shuffled silhouette (mean) | Shuffled silhouette (spread) | Standard deviations above shuffled |
+| --- | --- | --- | --- |
+| 0.452 | 0.345 | 0.005 | 22.583 |
+
+### Three quality scores for each k
+
+| k | Silhouette (higher better) | Calinski-Harabasz (higher better) | Davies-Bouldin (lower better) |
+| --- | --- | --- | --- |
+| 2 | 0.625 | 4307.825 | 0.543 |
+| 3 | 0.489 | 3946.858 | 0.742 |
+| 4 | 0.451 | 3981.273 | 0.761 |
+| 5 | 0.41 | 3806.291 | 0.816 |
+| 6 | 0.418 | 3608.849 | 0.84 |
+| 7 | 0.409 | 3586.393 | 0.832 |
+| 8 | 0.398 | 3571.134 | 0.834 |
+
 ## Choosing k
 
 ![k sweep](../outputs/figures/students/k_sweep.png)

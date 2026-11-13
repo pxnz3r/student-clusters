@@ -1,0 +1,5 @@
+Group,Mean Jaccard,Recovered in,Verdict
+Absent,0.973,1.0,very stable
+Dropping off,0.953,1.0,very stable
+Steady,0.96,1.0,very stable
+Highly engaged,0.976,1.0,very stable

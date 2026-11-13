@@ -1,0 +1,4 @@
+Finding
+"Best k by each score: silhouette 2, Calinski-Harabasz 2, Davies-Bouldin 2; k = 4 was used."
+"Most stable group: Highly engaged (mean Jaccard 0.98, very stable); least stable: Dropping off (0.95, very stable)."
+Silhouette 0.452 on the real data against 0.345 on shuffled data with no relationships between inputs: the groups reflect real structure.

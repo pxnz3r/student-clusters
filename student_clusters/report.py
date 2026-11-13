@@ -3,6 +3,8 @@ report.py - which saved tables and figures make up the results. The app's
 Results tab and docs/results.md both read this list, so they always match.
 """
 
+from pxlab.cluster.validate import validation_sections
+
 FOLDER = "students"
 
 
@@ -31,6 +33,7 @@ def results_sections():
                 ("figure", f"{FOLDER}/profiles_kmeans.png"),
             ],
         ),
+        *validation_sections(FOLDER),
         (
             "Choosing k",
             [
