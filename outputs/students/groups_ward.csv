@@ -1,0 +1,5 @@
+Group,Students,Share,Attendance,Study activity,Assignment completion,Distinction,Pass,Fail,Withdrawn,Advice
+Absent,242,0.15,0.04,0.62,0.01,0.0,0.0,0.17,0.83,"Contact in the first weeks: they barely log in and hand in almost nothing, and most withdraw."
+Dropping off,396,0.24,0.26,6.6,0.46,0.0,0.04,0.32,0.64,"Follow up after the first missed assignment: they start, then stop about halfway."
+Steady,645,0.39,0.69,15.55,0.96,0.08,0.59,0.27,0.06,"Study skills support: they hand in nearly everything, yet about three in ten fail."
+Highly engaged,372,0.22,0.92,56.71,1.0,0.17,0.77,0.06,0.01,"Stretch material: they log in almost every week and most pass, many with distinction."

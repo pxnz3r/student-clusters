@@ -1,0 +1,15 @@
+{
+  "inputs": [
+    "Attendance",
+    "Study activity (log)",
+    "Assignment completion"
+  ],
+  "k": 4,
+  "groups": {
+    "1": "Dropping off",
+    "3": "Highly engaged",
+    "2": "Absent",
+    "0": "Steady"
+  },
+  "students": 1655
+}
