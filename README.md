@@ -1,8 +1,28 @@
-# Student clusters
+<div align="center">
 
-Grouping students by learning pattern (attendance, study activity and assignment completion) with hierarchical clustering and K-Means, on 1,655 real students of an Open University course. Both methods find the same four groups, and the groups predict final results that neither method saw. An interactive demo re-runs both methods live.
+<h1>Student clusters</h1>
 
-![K-Means groups by attendance and study activity](outputs/figures/students/groups_kmeans.png)
+<p>Grouping students by learning pattern (attendance, study activity and assignment completion) with hierarchical clustering and K-Means, on 1,655 real students of an Open University course. Both methods find the same four groups, and the groups predict final results that neither method saw. An interactive demo re-runs both methods live.</p>
+
+<p>
+<a href="https://github.com/pxnz3r/student-clusters/actions/workflows/ci.yml"><img src="https://github.com/pxnz3r/student-clusters/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+<img src="https://img.shields.io/badge/python-3.14-blue" alt="Python 3.14">
+<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="MIT license"></a>
+</p>
+
+<p><a href="docs/results.md">Results</a> · <a href="docs/methodology.md">Methodology</a> · <a href="docs/deploy.md">Deploy the demo</a></p>
+
+<img src="outputs/figures/students/groups_kmeans.png" width="720" alt="K-Means groups by attendance and study activity">
+
+</div>
+
+## How it works
+
+1. **Load and check** 1,655 real students of an Open University course.
+2. **Group them** with hierarchical clustering (Ward) and K-Means, choosing k with several scores.
+3. **Compare the two methods** student by student and describe each group's learning pattern.
+4. **Validate the groups**: three internal indices, a silhouette diagram, bootstrap stability and a shuffled-data baseline.
+5. **Place a student** in a group in the Streamlit demo.
 
 ## Results
 
@@ -19,6 +39,16 @@ Grouping students by learning pattern (attendance, study activity and assignment
 - **Handing work in isn't enough.** Steady students submit 93% of assignments, yet 31% fail; they click a quarter as much as the engaged group.
 
 Full tables and figures: [docs/results.md](docs/results.md). How it was done: [docs/methodology.md](docs/methodology.md).
+
+## How sure the results are
+
+**The four groups are real.** Silhouette 0.452 on the real students against 0.345 on shuffled data with no true groups.
+
+**They are stable.** On 50 bootstrap samples every group comes back with a mean Jaccard of 0.95 or more (Highly engaged 0.98).
+
+**k = 4 is a teaching choice.** All three internal indices prefer k = 2 (engaged against not); four groups separate students who are dropping off from those who never started.
+
+Every table and figure behind these is in [docs/results.md](docs/results.md).
 
 ## Run it
 
